@@ -12,7 +12,7 @@
 
 ![](Diagramme.jpg)
 
-<h1>Liste des endpoint de mon application</h1>
+<h1>Liste des endpoints de mon application</h1>
 <h2>Premier endpoint</h2>
 <p>Permet d'afficher un message</p>
 

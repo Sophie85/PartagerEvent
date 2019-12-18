@@ -27,18 +27,20 @@ public class EventController {
 			new Evenement("31/01/2020", "Liberty Riders", "Rochefort", "Concentration hivernale : bonne humeur assurée !", "https://i1.wp.com/papymoto.fr/wp-content/uploads/2019/12/5e-Hivernale-Liberty-Rider-Genouill%C3%A9-17.jpg?fit=679%2C960&ssl=1?v=1575855919")
 			));
 	}
-	
+	//endpoint pour afficher un message sur la page web
 	@RequestMapping("/evenement")
 	public String partagerEvenement() {
 		return "Partager un évènement !";
 	}
 	
+	//endpoint pour afficher la liste d'objet sur la page web
 	@RequestMapping("/events")
 	public List<Evenement> getEvenementList() {
 
 		return eventList;
 	}
 	
+	//endpoint pour faire une recherche par id
 	@RequestMapping("/search")
 	public ResponseEntity<Evenement> getEvenement(@RequestParam(value = "id") int id) {
 		for (Evenement evenement : eventList) {
@@ -47,7 +49,8 @@ public class EventController {
 		}
 		return ResponseEntity.notFound().build();
 	}
-
+	
+	//endpoint pour ajouter un élément dans la liste
 	@RequestMapping("/ajout")
 	public List<Evenement> addEvent(
 			@RequestParam(value = "date") String date, 
@@ -60,12 +63,8 @@ public class EventController {
 		
 		return eventList;
 	}
-	
-	  /**
-     * Permet de personnalisé la page d'erreur
-     * @param request
-     * @return le template à charger pour afficher une page d'erreur
-     */
+	 
+	//endpoint pour renvoyer vers le template 404.html
     @GetMapping("/error")
     public String handleError(HttpServletRequest request) {
         return "404";

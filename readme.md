@@ -66,9 +66,22 @@ public String partagerEvenement() {
 		eventList.add(new Evenement(date, titre, ville, details, image));
 		
 		return eventList;
-	}
+    }
 ```
 ![](endpoint4.PNG)
+
+<h2>Cinquième endpoint</h2>
+<p>Pour renvoyer vers le template 404.html</p>
+
+```java
+ @GetMapping("/error")
+    public String handleError(HttpServletRequest request) {
+        return "404";
+    }
+```
+
+
+![](endpoint5.PNG)
 
 <h1>Capture d'écran du projet</h1>
 <h2>Haut</h2>

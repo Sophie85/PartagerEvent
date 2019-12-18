@@ -1,0 +1,35 @@
+body {
+    background-image: url("image/image-fond.JPG");
+    background-repeat: no-repeat ; /*pas de répition de l'image*/
+    background-attachment: fixed ;
+    background-size: cover;
+    width: 100%;
+   }
+
+   .banniere{
+    width: 100%;
+   }
+
+a.text-navbeer{
+    text-decoration: none !important;
+    color: black !important;
+}
+
+a:hover.text-navbeer{
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.ShareEvent {
+    text-decoration: wavy;
+}
+
+.containEvent{
+    
+    padding: 0px !important;
+}
+
+.divMarge {
+    padding-top: 4vh !important;
+}
+

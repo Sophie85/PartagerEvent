@@ -74,7 +74,7 @@ function ajouterEvenement() {
     });
 }
 
-
+//Recherche par id
 function idRecherche() {
     document.getElementById("search").addEventListener("click",function(event){
         $.ajax({
@@ -84,8 +84,8 @@ function idRecherche() {
         })
     });
 }
-
+//renvoyer à la page 404
 function error(data){
-    console.log("coucou");
+    //console.log("coucou");
     document.location.href="/err"
 }

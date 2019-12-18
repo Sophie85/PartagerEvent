@@ -12,11 +12,60 @@
 
 ![](Diagramme.jpg)
 
-<h1>Liste des Endpoint de mon application</h1>
-
+<h1>Liste des endpoint de mon application</h1>
+<h2>Premier endpoint</h2>
+<p>Permet d'afficher un message</p>
 
 ```java 
 @RequestMapping("/evenement")
+public String partagerEvenement() {
+		return "Partager un évènement !";
+	}
 ```
 ![](endpoint1.PNG)
 
+<h2>Deuxième endpoint</h2>
+<p>Permet d'afficher la liste des objets créés</p>
+
+```java
+@RequestMapping("/events")
+	public List<Evenement> getEvenementList() {
+
+		return eventList;
+	}
+```
+![](endpoint2.PNG)
+
+<h2>Troisième endpoint</h2>
+<p>Permet de faire une recherche par id dans la liste d'objets</p>
+
+```java
+@RequestMapping("/search")
+	public ResponseEntity<Evenement> getEvenement(@RequestParam(value = "id") int id) {
+		for (Evenement evenement : eventList) {
+			if(evenement.getId() == id)
+				return ResponseEntity.ok(evenement);
+		}
+		return ResponseEntity.notFound().build();
+	}
+```
+![](endpoint3.PNG)
+
+<h2>Quatrième endpoint</h2>
+<p>Permet d'ajouter un objet dans la liste</p>
+
+```java
+@RequestMapping("/ajout")
+	public List<Evenement> addEvent(
+			@RequestParam(value = "date") String date, 
+			@RequestParam(value = "titre") String titre, 
+			@RequestParam(value = "ville") String ville, 
+			@RequestParam(value = "details") String details, 
+			@RequestParam(defaultValue = "image/evenement.jpg",
+			value = "image") String image){
+		eventList.add(new Evenement(date, titre, ville, details, image));
+		
+		return eventList;
+	}
+```
+![](endpoint4.PNG)

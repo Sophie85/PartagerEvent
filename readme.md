@@ -91,3 +91,6 @@ public String partagerEvenement() {
 <h2>Bas</h2>
 
 ![](Capture2.PNG)
+
+<h1>Remerciements</h1>
+<p>Un grand merci à Virgile pour son aide et sa patience...</p>

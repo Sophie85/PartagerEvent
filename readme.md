@@ -69,3 +69,12 @@ public String partagerEvenement() {
 	}
 ```
 ![](endpoint4.PNG)
+
+<h1>Capture d'écran du projet</h1>
+<h2>Haut</h2>
+
+![](Capture1.PNG)
+
+<h2>Bas</h2>
+
+![](Capture2.PNG)
